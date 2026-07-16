@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gokul Krishna K M | CSE Student & Builder</title>
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --dark: #1e2937;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: #f8fafc;
+        }
+        header {
+            background: linear-gradient(135deg, var(--dark), #0f172a);
+            color: white;
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        .logo { font-size: 1.8rem; font-weight: bold; }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 2rem;
+            font-weight: 500;
+        }
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://picsum.photos/1920/1080?random=1') center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        .hero-content h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+        }
+        .hero-content p {
+            font-size: 1.6rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h2 {
+            font-size: 2.8rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--dark);
+        }
+        .about, .routine, .fitness, .skills, .goals {
+            background: white;
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .card {
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 12px;
+        }
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+        .btn:hover { transform: translateY(-3px); }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Gokul Krishna</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#routine">Routine</a>
+                <a href="#fitness">Fitness</a>
+                <a href="#skills">Skills</a>
+                <a href="#goals">Goals</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm Gokul Krishna K M</h1>
+            <p>B.Tech Computer Science Student | Aspiring Developer | Fitness Enthusiast</p>
+            <a href="#about" class="btn">Learn More About Me</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="about">
+            <h2>About Me</h2>
+            <p style="font-size: 1.2rem; text-align: center;">
+                I am a dedicated B.Tech Computer Science student who is passionate about technology, continuous learning, 
+                and maintaining a balanced lifestyle. Currently managing college, a part-time job, and a serious gym routine.
+            </p>
+        </div>
+    </section>
+
+    <section id="routine">
+        <h2>My Daily Routine</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>📚 College</h3>
+                <p><strong>9:00 AM – 4:00 PM</strong><br>Focused on Computer Science and Engineering subjects.</p>
+            </div>
+            <div class="card">
+                <h3>💼 Part-time Job</h3>
+                <p><strong>5:00 PM – 10:30 PM</strong><br>Balancing work with studies to build financial independence.</p>
+            </div>
+            <div class="card">
+                <h3>🏋️ Fitness & Self-Improvement</h3>
+                <p>Early mornings or late nights for workouts, learning, and personal growth.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="fitness" style="background: #f1f5f9;">
+        <h2>Fitness Journey</h2>
+        <div class="fitness">
+            <p>I take my fitness seriously. Regular gym sessions, proper nutrition, and tracking progress are a big part of my life.</p>
+            <div class="grid" style="margin-top: 2rem;">
+                <div class="card">Deadlifts & Strength Training</div>
+                <div class="card">Cutting Diets & Calorie Tracking</div>
+                <div class="card">High Protein Intake & Creatine</div>
+                <div class="card">Consistent Recovery & Discipline</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills & Learning Interests</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Programming</h3>
+                <p>C • Python • Git • Web Development</p>
+            </div>
+            <div class="card">
+                <h3>Technologies</h3>
+                <p>AI/ML • Data Structures • Engineering Fundamentals</p>
+            </div>
+            <div class="card">
+                <h3>Soft Skills</h3>
+                <p>Time Management • Discipline • Continuous Learning</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="goals">
+        <h2>My Goals</h2>
+        <div class="goals">
+            <ul style="font-size: 1.2rem; line-height: 2.2rem;">
+                <li>✅ Build a strong technical career in Software Development / AI</li>
+                <li>✅ Stay consistent with fitness and health</li>
+                <li>✅ Achieve financial independence while studying</li>
+                <li>✅ Keep improving programming & engineering skills daily</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>Gokul Krishna K M</strong> • B.Tech CSE Student</p>
+        <p>Let's connect and build something great together!</p>
+        <p style="margin-top: 1rem;">Made with dedication & ❤️</p>
+    </footer>
+</body>
+</html>
