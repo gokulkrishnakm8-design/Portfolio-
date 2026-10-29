@@ -1,6 +1,6 @@
 # Gokul Krishna K M – Portfolio
 
-A personal portfolio website for Gokul Krishna K M, a B.Tech Computer Science student at Jawaharlal College of Engineering and Technology (Autonomous). It is a single HTML file with all CSS and JavaScript embedded, so there is nothing to install or build.
+My own portfolio website for Gokul Krishna K M, a B.Tech Computer Science student at Jawaharlal College of Engineering and Technology (Autonomous). It is a single HTML file with all CSS and JavaScript embedded, so there is nothing to install or build.
 
 ## Design
 
