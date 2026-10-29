@@ -1,206 +1,416 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gokul Krishna K M | CSE Student & Builder</title>
-    <style>
-        :root {
-            --primary: #3b82f6;
-            --dark: #1e2937;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            line-height: 1.7;
-            color: #333;
-            background: #f8fafc;
-        }
-        header {
-            background: linear-gradient(135deg, var(--dark), #0f172a);
-            color: white;
-            padding: 1.5rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-        .logo { font-size: 1.8rem; font-weight: bold; }
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            margin-left: 2rem;
-            font-weight: 500;
-        }
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://picsum.photos/1920/1080?random=1') center/cover;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-        }
-        .hero-content h1 {
-            font-size: 4.5rem;
-            margin-bottom: 1rem;
-        }
-        .hero-content p {
-            font-size: 1.6rem;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-        }
-        section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        h2 {
-            font-size: 2.8rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: var(--dark);
-        }
-        .about, .routine, .fitness, .skills, .goals {
-            background: white;
-            padding: 3rem;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin-bottom: 3rem;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        .card {
-            background: #f8fafc;
-            padding: 1.5rem;
-            border-radius: 12px;
-        }
-        footer {
-            background: var(--dark);
-            color: white;
-            text-align: center;
-            padding: 3rem 2rem;
-        }
-        .btn {
-            display: inline-block;
-            background: var(--primary);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 1rem;
-        }
-        .btn:hover { transform: translateY(-3px); }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gokul Krishna K M – Computer Science Student</title>
+<meta name="description" content="Portfolio of Gokul Krishna K M, B.Tech Computer Science student working with C, Python, Git and GitHub, and building FitDiet, a diet planner for gym users.">
+<meta name="theme-color" content="#0a0920">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0920; --bg2:#12103a; --line:#2b2772; --ink:#ece9ff; --mute:#a09cd2;
+  --pur:#9b6dff; --pur2:#c9b3ff; --glow:rgba(155,109,255,.35);
+  --display:"Syne","Trebuchet MS",system-ui,sans-serif;
+  --body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
+body{background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--body);overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--pur2);outline-offset:3px;border-radius:4px}
+.wrap{width:min(1120px,100% - 2.5rem);margin-inline:auto}
+section{padding:6rem 0;position:relative}
+h2{font:800 clamp(2rem,5vw,3.4rem)/1.05 var(--display);letter-spacing:-.02em;margin-bottom:1.5rem}
+h3{font:600 1.25rem/1.3 var(--display)}
+p{max-width:62ch;color:var(--mute)}
+#sky{position:fixed;inset:0;width:100%;height:100%;z-index:-1}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--pur),var(--pur2));z-index:30}
+
+/* nav */
+header{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(10,9,32,.72);backdrop-filter:blur(12px);border-bottom:1px solid rgba(155,109,255,.15)}
+nav{display:flex;align-items:center;justify-content:space-between;height:3.6rem}
+.logo{font:800 1.2rem var(--display);text-decoration:none;display:flex;align-items:center;gap:.6rem}
+.logo i{width:1.5rem;height:1.5rem;border-radius:50%;background:var(--pur);box-shadow:inset -.5rem -.15rem 0 0 var(--bg),0 0 14px var(--glow)}
+.links{display:flex;gap:.25rem;list-style:none}
+.links a{display:block;padding:.4rem .8rem;border-radius:99px;text-decoration:none;color:var(--mute);font-size:.95rem;transition:color .2s,background .2s}
+.links a:hover{color:var(--ink)}
+.links a.on{color:var(--ink);background:rgba(155,109,255,.2)}
+#menu{display:none;background:none;border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:.4rem .7rem;font:inherit;cursor:pointer}
+
+/* hero */
+#top{min-height:100svh;display:flex;align-items:center;padding:7rem 0 4rem;overflow:hidden}
+.moon{position:absolute;right:max(-6rem,-8vw);top:12%;width:clamp(14rem,34vw,26rem);aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle at 35% 35%,#d9c8ff,var(--pur) 60%);box-shadow:0 0 90px 10px var(--glow);
+  -webkit-mask:radial-gradient(circle at 72% 40%,transparent 0 46%,#000 47%);mask:radial-gradient(circle at 72% 40%,transparent 0 46%,#000 47%);
+  animation:float 9s ease-in-out infinite alternate}
+@keyframes float{to{transform:translateY(-18px) rotate(6deg)}}
+.name{font:800 clamp(3.6rem,15vw,10.5rem)/.88 var(--display);letter-spacing:-.04em;position:relative}
+.name span{display:block;overflow:hidden}
+.name span b{display:block;font-weight:inherit;transform:translateY(105%);animation:rise .9s cubic-bezier(.2,.8,.2,1) forwards}
+.name span:nth-child(2){padding-left:min(12vw,9rem)}
+.name span:nth-child(3){padding-left:min(24vw,18rem);color:var(--pur)}
+.name span:nth-child(2) b{animation-delay:.12s}.name span:nth-child(3) b{animation-delay:.24s}
+@keyframes rise{to{transform:none}}
+.lede{margin:2rem 0 2rem min(12vw,9rem);font-size:1.2rem;max-width:44ch;color:var(--ink);opacity:0;animation:fade .8s .7s forwards}
+.cta{margin-left:min(12vw,9rem);display:flex;gap:.8rem;flex-wrap:wrap;opacity:0;animation:fade .8s .9s forwards}
+@keyframes fade{to{opacity:1}}
+.btn{display:inline-block;padding:.8rem 1.5rem;border-radius:99px;text-decoration:none;font-weight:700;border:1px solid var(--pur);cursor:pointer;font-family:inherit;font-size:1rem;transition:transform .2s,box-shadow .2s,background .2s}
+.btn.fill{background:var(--pur);color:#12062e}
+.btn.fill:hover{box-shadow:0 0 28px var(--glow);transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{background:rgba(155,109,255,.18)}
+
+/* about */
+.about{display:grid;grid-template-columns:1.1fr 1fr;gap:3rem;align-items:start}
+.about .big{font:600 clamp(1.5rem,3.2vw,2.3rem)/1.25 var(--display);color:var(--ink);max-width:22ch}
+dl{display:grid;grid-template-columns:auto 1fr;gap:.7rem 1.4rem;margin-top:1.6rem;padding-top:1.4rem;border-top:1px solid var(--line)}
+dt{color:var(--pur2);font-weight:700}dd{color:var(--mute)}
+
+/* studies */
+.course{border-top:1px solid var(--line)}
+.course:last-child{border-bottom:1px solid var(--line)}
+.course summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:1rem;align-items:center;padding:1.3rem .2rem;transition:padding .25s,color .2s}
+.course summary::-webkit-details-marker{display:none}
+.course summary:hover{padding-left:1rem;color:var(--pur2)}
+.course summary::after{content:"+";font:300 1.8rem/1 var(--display);color:var(--pur);transition:transform .3s}
+.course[open] summary::after{transform:rotate(45deg)}
+.course small{color:var(--mute);font-size:.88rem;display:block;font-family:var(--mono)}
+.course .body{padding:0 .2rem 1.5rem;animation:open .35s ease}
+@keyframes open{from{opacity:0;transform:translateY(-8px)}}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.9rem;list-style:none}
+.tags li{padding:.3rem .8rem;border:1px solid var(--line);border-radius:99px;font-size:.92rem;color:var(--ink);background:rgba(18,16,58,.7);transition:border-color .2s,transform .2s}
+.tags li:hover{border-color:var(--pur);transform:translateY(-2px)}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(4,1fr);gap:2.2rem 1.6rem}
+.skills h3{color:var(--pur2);font-size:1.05rem;margin-bottom:.2rem}
+.skills .tags li{font-size:.88rem}
+
+/* git */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.term{background:#07061a;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.term header{position:static;display:flex;gap:.4rem;padding:.7rem 1rem;background:var(--bg2);border:0}
+.term header i{width:.7rem;height:.7rem;border-radius:50%;background:var(--line)}
+.term header i:first-child{background:var(--pur)}
+.term pre{padding:1.2rem;font:.92rem/1.9 var(--mono);color:var(--pur2);overflow-x:auto}
+.term pre em{color:var(--mute);font-style:normal}
+.cursor{display:inline-block;width:.6rem;height:1.05em;background:var(--pur);vertical-align:-.15em;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+
+/* project */
+.proj{border:1px solid var(--line);border-radius:22px;padding:clamp(1.4rem,4vw,3rem);background:linear-gradient(140deg,rgba(43,39,114,.45),rgba(10,9,32,.2));display:grid;grid-template-columns:1.2fr 1fr;gap:2.5rem}
+.proj h3{font-size:clamp(1.5rem,3vw,2.1rem);margin-bottom:.8rem}
+.demo{background:#07061a;border:1px solid var(--line);border-radius:16px;padding:1.3rem}
+.demo label{display:block;font-weight:700;margin-bottom:.4rem}
+.demo input{width:100%;padding:.7rem .9rem;border-radius:10px;border:1px solid var(--line);background:var(--bg2);color:var(--ink);font:inherit;color-scheme:dark}
+.demo ol{list-style:none;margin-top:1rem}
+.demo li{display:flex;justify-content:space-between;padding:.55rem .2rem;border-bottom:1px dashed var(--line);animation:open .3s ease}
+.demo li.train{color:var(--pur2);font-weight:700}
+.demo li span:last-child{font-family:var(--mono)}
+.demo p{font-size:.85rem;margin-top:.9rem}
+
+/* fitness + goals */
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.trio div{border-left:2px solid var(--pur);padding-left:1.2rem}
+.trio h3{margin-bottom:.4rem}
+.goals{list-style:none;display:grid;gap:0}
+.goals li{display:grid;grid-template-columns:minmax(9rem,1fr) 2fr;gap:1.5rem;padding:1.3rem 0;border-top:1px solid var(--line)}
+.goals li:last-child{border-bottom:1px solid var(--line)}
+.goals strong{font:600 1.15rem var(--display);color:var(--pur2)}
+
+/* contact */
+.contact{display:grid;grid-template-columns:1fr 1.1fr;gap:3rem}
+form{display:grid;gap:1rem}
+form label{display:grid;gap:.35rem;font-weight:700}
+form input,form textarea{width:100%;padding:.8rem 1rem;border-radius:12px;border:1px solid var(--line);background:var(--bg2);color:var(--ink);font:400 1rem var(--body)}
+form textarea{min-height:8rem;resize:vertical}
+#status{min-height:1.5rem;color:var(--pur2)}
+.reach{list-style:none;display:grid;gap:.6rem;margin-top:1.5rem}
+.reach a{color:var(--pur2);text-underline-offset:4px}
+footer{padding:2rem 0 3rem;color:var(--mute);font-size:.9rem;border-top:1px solid var(--line)}
+
+@media (max-width:900px){
+  .skills{grid-template-columns:repeat(2,1fr)}
+  .about,.split,.proj,.contact,.trio{grid-template-columns:1fr}
+  .goals li{grid-template-columns:1fr;gap:.3rem}
+}
+@media (max-width:720px){
+  #menu{display:block}
+  .links{position:absolute;top:3.6rem;left:0;right:0;flex-direction:column;background:var(--bg);padding:.8rem 1.25rem 1.2rem;border-bottom:1px solid var(--line);display:none}
+  .links.open{display:flex}
+  section{padding:4.5rem 0}
+  .skills{grid-template-columns:1fr}
+  .moon{opacity:.55;top:6%}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .name span b{transform:none}.lede,.cta{opacity:1}
+}
+</style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">Gokul Krishna</div>
-            <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#routine">Routine</a>
-                <a href="#fitness">Fitness</a>
-                <a href="#skills">Skills</a>
-                <a href="#goals">Goals</a>
-            </div>
-        </nav>
-    </header>
+<canvas id="sky" aria-hidden="true"></canvas>
+<div id="bar"></div>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Hi, I'm Gokul Krishna K M</h1>
-            <p>B.Tech Computer Science Student | Aspiring Developer | Fitness Enthusiast</p>
-            <a href="#about" class="btn">Learn More About Me</a>
-        </div>
-    </section>
+<header>
+  <nav class="wrap" aria-label="Main">
+    <a class="logo" href="#top"><i></i>Gokul</a>
+    <button id="menu" aria-expanded="false" aria-controls="links">Menu</button>
+    <ul class="links" id="links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#studies">Studies</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#git">Git</a></li>
+      <li><a href="#fitdiet">FitDiet</a></li>
+      <li><a href="#fitness">Fitness</a></li>
+      <li><a href="#goals">Goals</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-    <section id="about">
-        <div class="about">
-            <h2>About Me</h2>
-            <p style="font-size: 1.2rem; text-align: center;">
-                I am a dedicated B.Tech Computer Science student who is passionate about technology, continuous learning, 
-                and maintaining a balanced lifestyle. Currently managing college, a part-time job, and a serious gym routine.
-            </p>
-        </div>
-    </section>
+<main>
+<section id="top">
+  <div class="moon" aria-hidden="true"></div>
+  <div class="wrap">
+    <h1 class="name" aria-label="Gokul Krishna K M">
+      <span><b>Gokul</b></span><span><b>Krishna</b></span><span><b>K M</b></span>
+    </h1>
+    <p class="lede">B.Tech Computer Science student writing C and Python, learning Git and GitHub, and building FitDiet, a meal planner for people who train.</p>
+    <div class="cta">
+      <a class="btn fill" href="#fitdiet">See my project</a>
+      <a class="btn ghost" href="#contact">Say hello</a>
+    </div>
+  </div>
+</section>
 
-    <section id="routine">
-        <h2>My Daily Routine</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>📚 College</h3>
-                <p><strong>9:00 AM – 4:00 PM</strong><br>Focused on Computer Science and Engineering subjects.</p>
-            </div>
-            <div class="card">
-                <h3>💼 Part-time Job</h3>
-                <p><strong>5:00 PM – 10:30 PM</strong><br>Balancing work with studies to build financial independence.</p>
-            </div>
-            <div class="card">
-                <h3>🏋️ Fitness & Self-Improvement</h3>
-                <p>Early mornings or late nights for workouts, learning, and personal growth.</p>
-            </div>
-        </div>
-    </section>
+<section id="about">
+  <div class="wrap about">
+    <div>
+      <h2>About me</h2>
+      <p class="big">I like turning course concepts into things that run, and daily habits into code.</p>
+    </div>
+    <div>
+      <p>I'm a B.Tech student at Jawaharlal College of Engineering and Technology (Autonomous). My coursework runs from C fundamentals and Linux to Python for AI, and I back it with my own project work: a web app that builds a daily meal schedule around a person's workout.</p>
+      <dl>
+        <dt>College</dt><dd>Jawaharlal College of Engineering and Technology (Autonomous)</dd>
+        <dt>Programme</dt><dd>B.Tech, Computer Science</dd>
+        <dt>Working on</dt><dd>FitDiet, Python for AI, Git and GitHub</dd>
+        <dt>Outside code</dt><dd>Fitness and nutrition</dd>
+      </dl>
+    </div>
+  </div>
+</section>
 
-    <section id="fitness" style="background: #f1f5f9;">
-        <h2>Fitness Journey</h2>
-        <div class="fitness">
-            <p>I take my fitness seriously. Regular gym sessions, proper nutrition, and tracking progress are a big part of my life.</p>
-            <div class="grid" style="margin-top: 2rem;">
-                <div class="card">Deadlifts & Strength Training</div>
-                <div class="card">Cutting Diets & Calorie Tracking</div>
-                <div class="card">High Protein Intake & Creatine</div>
-                <div class="card">Consistent Recovery & Discipline</div>
-            </div>
-        </div>
-    </section>
+<section id="studies">
+  <div class="wrap">
+    <h2>What I'm studying</h2>
+    <p style="margin-bottom:2rem">Open a course to see the topics I've worked through and prepared model answers for.</p>
+    <details class="course" open>
+      <summary><span><h3>Programming in C</h3><small>25ICPGCT204</small></span></summary>
+      <div class="body"><p>Core C, from data handling to memory and files.</p>
+        <ul class="tags"><li>Arrays</li><li>Recursion</li><li>Pointers</li><li>File operations</li><li>Structures</li></ul></div>
+    </details>
+    <details class="course">
+      <summary><span><h3>IT Workshop</h3><small>25ICITWP208</small></span></summary>
+      <div class="body"><p>How computers, systems and office tools fit together.</p>
+        <ul class="tags"><li>Hardware</li><li>Linux commands</li><li>MS Office tasks</li><li>Cybersecurity</li><li>Operating system concepts</li></ul></div>
+    </details>
+    <details class="course">
+      <summary><span><h3>Foundations of Computing</h3><small>FoC</small></span></summary>
+      <div class="body"><p>The ideas underneath networks and the web.</p>
+        <ul class="tags"><li>OSI model</li><li>HTML</li><li>CSS</li></ul></div>
+    </details>
+    <details class="course">
+      <summary><span><h3>Applied Python for AI</h3><small>Modules 4 and 5</small></span></summary>
+      <div class="body"><p>Python libraries for data work, language and vision.</p>
+        <ul class="tags"><li>NumPy</li><li>Pandas</li><li>Matplotlib</li><li>NLP</li><li>Computer vision</li></ul></div>
+    </details>
+  </div>
+</section>
 
-    <section id="skills">
-        <h2>Skills & Learning Interests</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Programming</h3>
-                <p>C • Python • Git • Web Development</p>
-            </div>
-            <div class="card">
-                <h3>Technologies</h3>
-                <p>AI/ML • Data Structures • Engineering Fundamentals</p>
-            </div>
-            <div class="card">
-                <h3>Soft Skills</h3>
-                <p>Time Management • Discipline • Continuous Learning</p>
-            </div>
-        </div>
-    </section>
+<section id="skills">
+  <div class="wrap">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div><h3>Languages</h3><ul class="tags"><li>C</li><li>Python</li><li>HTML</li><li>CSS</li><li>JavaScript</li></ul></div>
+      <div><h3>Python for AI</h3><ul class="tags"><li>NumPy</li><li>Pandas</li><li>Matplotlib</li><li>NLP</li><li>Computer vision</li></ul></div>
+      <div><h3>Tools</h3><ul class="tags"><li>Git</li><li>GitHub</li><li>VS Code</li><li>Linux</li><li>MS Office</li></ul></div>
+      <div><h3>Fundamentals</h3><ul class="tags"><li>Data structures in C</li><li>OSI model</li><li>Operating systems</li><li>Cybersecurity basics</li></ul></div>
+    </div>
+  </div>
+</section>
 
-    <section id="goals">
-        <h2>My Goals</h2>
-        <div class="goals">
-            <ul style="font-size: 1.2rem; line-height: 2.2rem;">
-                <li>✅ Build a strong technical career in Software Development / AI</li>
-                <li>✅ Stay consistent with fitness and health</li>
-                <li>✅ Achieve financial independence while studying</li>
-                <li>✅ Keep improving programming & engineering skills daily</li>
-            </ul>
-        </div>
-    </section>
+<section id="git">
+  <div class="wrap split">
+    <div>
+      <h2>Learning Git and GitHub</h2>
+      <p>I use Git with VS Code to track my work and keep a remote repository on GitHub. Pushing and pulling is part of how I build FitDiet.</p>
+    </div>
+    <div class="term" role="img" aria-label="Terminal showing git add, commit, push and pull">
+      <header><i></i><i></i><i></i></header>
+      <pre>$ git add .
+$ git commit -m "add meal schedule"
+$ git push origin main
+<em># remote repo on GitHub is up to date</em>
+$ git pull
+<span class="cursor"></span></pre>
+    </div>
+  </div>
+</section>
 
-    <footer>
-        <p><strong>Gokul Krishna K M</strong> • B.Tech CSE Student</p>
-        <p>Let's connect and build something great together!</p>
-        <p style="margin-top: 1rem;">Made with dedication & ❤️</p>
-    </footer>
+<section id="fitdiet">
+  <div class="wrap">
+    <h2>FitDiet</h2>
+    <div class="proj">
+      <div>
+        <h3>A personalized food diet scheduling and fitness nutrition web application</h3>
+        <p>FitDiet is my college project for gym users. A person enters their body weight and workout details, and the app returns a daily meal schedule: breakfast, lunch, pre-workout, post-workout and dinner.</p>
+        <p style="margin-top:1rem">I'm building it with VS Code, Git and GitHub, and giving the site a dark, cinematic look.</p>
+        <ul class="tags"><li>Web app</li><li>HTML, CSS, JavaScript</li><li>Git and GitHub</li><li>Meal scheduling</li></ul>
+      </div>
+      <div class="demo">
+        <label for="wt">Try it: when do you train?</label>
+        <input id="wt" type="time" value="18:00">
+        <ol id="plan" aria-live="polite"></ol>
+        <p>A small preview of the idea: meals arranged around your workout time. It is not nutrition advice.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="fitness">
+  <div class="wrap">
+    <h2>Fitness and nutrition</h2>
+    <div class="trio">
+      <div><h3>Training</h3><p>I follow gym training, which is why FitDiet starts from workout information.</p></div>
+      <div><h3>Food timing</h3><p>What you eat before and after a session matters, so the planner treats those meals as their own slots.</p></div>
+      <div><h3>Consistency</h3><p>A schedule you can follow each day beats a perfect plan you drop. I want the app to make that easy.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="goals">
+  <div class="wrap">
+    <h2>Goals</h2>
+    <ul class="goals">
+      <li><strong>Ship FitDiet</strong><span>Finish the web app, publish the repository on GitHub and make the site fast and easy to use.</span></li>
+      <li><strong>Go deeper in Python for AI</strong><span>Use NumPy, Pandas, NLP and computer vision in projects, not just in exams.</span></li>
+      <li><strong>Work like a developer</strong><span>Commit often, write clear messages and collaborate through GitHub.</span></li>
+      <li><strong>Become a software engineer</strong><span>Graduate with strong fundamentals in C, systems and the web.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap contact">
+    <div>
+      <h2>Let's talk</h2>
+      <p>Open to project ideas, study partners and internships. Send a note and I'll reply.</p>
+      <ul class="reach" id="reach"></ul>
+    </div>
+    <form id="form" novalidate>
+      <label>Your name<input name="n" autocomplete="name" required></label>
+      <label>Your email<input name="e" type="email" autocomplete="email" required></label>
+      <label>Message<textarea name="m" required></textarea></label>
+      <button class="btn fill" type="submit" id="send">Send message</button>
+      <div id="status" role="status"></div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">&copy; <span id="yr"></span> Gokul Krishna K M. Built with HTML, CSS and JavaScript.</div></footer>
+
+<script>
+// ---- Edit these to show your links. Empty values are hidden. ----
+const CONFIG = {
+  email: "",      // e.g. "you@example.com"
+  github: "",     // e.g. "https://github.com/yourname"
+  linkedin: ""    // e.g. "https://www.linkedin.com/in/yourname"
+};
+
+const $ = (s, r = document) => r.querySelector(s);
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+$("#yr").textContent = new Date().getFullYear();
+
+// nav
+const links = $("#links"), menu = $("#menu");
+menu.onclick = () => { const o = links.classList.toggle("open"); menu.setAttribute("aria-expanded", o); };
+links.addEventListener("click", e => { if (e.target.tagName === "A") { links.classList.remove("open"); menu.setAttribute("aria-expanded", false); } });
+const navLinks = [...links.querySelectorAll("a")];
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) navLinks.forEach(a => a.classList.toggle("on", a.getAttribute("href") === "#" + e.target.id));
+}), { rootMargin: "-45% 0px -50% 0px" });
+document.querySelectorAll("main section[id]").forEach(s => io.observe(s));
+addEventListener("scroll", () => {
+  const h = document.documentElement;
+  $("#bar").style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + "%";
+}, { passive: true });
+
+// starfield
+const cv = $("#sky"), cx = cv.getContext("2d");
+let W, H, stars = [], mouse = { x: -999, y: -999 };
+function size() {
+  const d = Math.min(devicePixelRatio || 1, 2);
+  W = innerWidth; H = innerHeight;
+  cv.width = W * d; cv.height = H * d; cx.setTransform(d, 0, 0, d, 0, 0);
+  const n = Math.round(Math.min(90, W * H / 14000));
+  stars = Array.from({ length: n }, () => ({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .18, vy: (Math.random() - .5) * .18, r: Math.random() * 1.4 + .4 }));
+}
+function draw() {
+  cx.clearRect(0, 0, W, H);
+  for (const s of stars) {
+    if (!reduce) { s.x += s.vx; s.y += s.vy; if (s.x < 0 || s.x > W) s.vx *= -1; if (s.y < 0 || s.y > H) s.vy *= -1; }
+    cx.fillStyle = "rgba(201,179,255,.8)"; cx.beginPath(); cx.arc(s.x, s.y, s.r, 0, 6.283); cx.fill();
+  }
+  for (let i = 0; i < stars.length; i++) {
+    const a = stars[i];
+    for (let j = i + 1; j < stars.length; j++) {
+      const b = stars[j], d = Math.hypot(a.x - b.x, a.y - b.y);
+      if (d < 110) { cx.strokeStyle = `rgba(155,109,255,${.22 * (1 - d / 110)})`; cx.beginPath(); cx.moveTo(a.x, a.y); cx.lineTo(b.x, b.y); cx.stroke(); }
+    }
+    const m = Math.hypot(a.x - mouse.x, a.y - mouse.y);
+    if (m < 160) { cx.strokeStyle = `rgba(201,179,255,${.5 * (1 - m / 160)})`; cx.beginPath(); cx.moveTo(a.x, a.y); cx.lineTo(mouse.x, mouse.y); cx.stroke(); }
+  }
+  if (!reduce) requestAnimationFrame(draw);
+}
+addEventListener("resize", () => { size(); if (reduce) draw(); });
+addEventListener("pointermove", e => { mouse.x = e.clientX; mouse.y = e.clientY; });
+size(); draw();
+
+// FitDiet preview
+const fmt = m => { m = ((m % 1440) + 1440) % 1440; const h = Math.floor(m / 60), mm = m % 60; return String(h).padStart(2, "0") + ":" + String(mm).padStart(2, "0"); };
+function plan() {
+  const v = $("#wt").value || "18:00", [h, m] = v.split(":").map(Number), w = h * 60 + m;
+  const items = [["Breakfast", 480], ["Lunch", 780], ["Pre-workout", w - 60], ["Workout", w, 1], ["Post-workout", w + 90], ["Dinner", 1230]]
+    .sort((a, b) => a[1] - b[1]);
+  $("#plan").innerHTML = items.map(i => `<li class="${i[2] ? "train" : ""}"><span>${i[0]}</span><span>${fmt(i[1])}</span></li>`).join("");
+}
+$("#wt").addEventListener("input", plan); plan();
+
+// contact
+const reach = $("#reach");
+[["Email", CONFIG.email && "mailto:" + CONFIG.email, CONFIG.email], ["GitHub", CONFIG.github, "GitHub profile"], ["LinkedIn", CONFIG.linkedin, "LinkedIn profile"]]
+  .forEach(([k, href, label]) => { if (href) reach.insertAdjacentHTML("beforeend", `<li>${k}: <a href="${href}" target="_blank" rel="noopener">${label}</a></li>`); });
+$("#form").addEventListener("submit", e => {
+  e.preventDefault();
+  const f = e.target, st = $("#status");
+  if (!f.n.value.trim() || !/^\S+@\S+\.\S+$/.test(f.e.value) || !f.m.value.trim()) { st.textContent = "Add your name, a valid email and a message."; return; }
+  const body = `${f.m.value}\n\nFrom: ${f.n.value} (${f.e.value})`;
+  if (CONFIG.email) {
+    location.href = `mailto:${CONFIG.email}?subject=${encodeURIComponent("Portfolio message from " + f.n.value)}&body=${encodeURIComponent(body)}`;
+    st.textContent = "Opening your email app.";
+  } else {
+    (navigator.clipboard ? navigator.clipboard.writeText(body) : Promise.reject()).then(
+      () => st.textContent = "Message copied. Paste it into an email to Gokul.",
+      () => st.textContent = "Add your email in CONFIG at the top of the script to enable sending.");
+  }
+});
+</script>
 </body>
 </html>
